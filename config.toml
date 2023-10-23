@@ -13,7 +13,7 @@ auto-signature-help = true
 
 [editor.cursor-shape]
 # bar | block | underline
-insert = "block"
+insert = "bar"
 normal = "block"
 select = "underline"
 
@@ -34,15 +34,13 @@ enable = true
 max-wrap = 25         
 max-indent-retain = 0
 # set wrap-indicator to "" to hide it
-wrap-indicator = ""   
+wrap-indicator = ""
 
 [keys.normal]
+K = "hover"
 G = "goto_file_end"
-# C-o = ":config-open"
 C-r = ":config-reload"
 V = ["select_mode", "extend_to_line_bounds"]
-0 = "goto_line_start"
-# "$" = "goto_line_end" # default :keep-pipe
 # by default C-f/C-b(conflicts with tmux prefix) is mapped to page_down/up
 C-f = "file_picker_in_current_buffer_directory" 
 [keys.normal.space]
@@ -57,6 +55,8 @@ i = ":toggle lsp.display-inlay-hints"
 [keys.normal.g]
 # Maps `ga` to show possible code actions
 a = "code_action" 
+# by default, gc is mapped to "GOTO view center"
+# c = "toggle_commens"
 
 [keys.insert]
 # Maps `jk` to exit insert mode
