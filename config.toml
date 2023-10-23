@@ -1,4 +1,4 @@
-theme = "github_dark" # default "default"
+theme = "monokai" # default "default"
 
 [editor]
 cursorline = false
@@ -30,24 +30,23 @@ hidden = false
 
 [editor.soft-wrap]
 enable = true
-max-wrap = 25         # increase value to reduce forced mid-word wrapping
+# increase value to reduce forced mid-word wrapping
+max-wrap = 25         
 max-indent-retain = 0
-wrap-indicator = ""   # set wrap-indicator to "" to hide it
+# set wrap-indicator to "" to hide it
+wrap-indicator = ""   
 
 [keys.normal]
 G = "goto_file_end"
-# Quick iteration on config changes
 # C-o = ":config-open"
 C-r = ":config-reload"
 V = ["select_mode", "extend_to_line_bounds"]
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
-# Muscle memory
 0 = "goto_line_start"
 # "$" = "goto_line_end" # default :keep-pipe
+# by default C-f/C-b(conflicts with tmux prefix) is mapped to page_down/up
+C-f = "file_picker_in_current_buffer_directory" 
 [keys.normal.space]
 i = ":toggle lsp.display-inlay-hints"
-B = "file_picker_in_current_buffer_directory"
 
 [keys.normal."["]
 "[" = "goto_previous_buffer"
@@ -56,8 +55,13 @@ B = "file_picker_in_current_buffer_directory"
 "]" = "goto_next_buffer"
 
 [keys.normal.g]
-a = "code_action" # Maps `ga` to show possible code actions
+# Maps `ga` to show possible code actions
+a = "code_action" 
 
 [keys.insert]
-j = { k = "normal_mode" } # Maps `jk` to exit insert mode
-"C-space" = "completion"  # Maps c-space to completion, default is C-x
+# Maps `jk` to exit insert mode
+j = { k = "normal_mode" } 
+# Maps c-space to completion, default is C-x
+"C-space" = "completion"  
+[keys.select]
+G = "goto_file_end"
